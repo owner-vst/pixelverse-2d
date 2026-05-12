@@ -9,7 +9,8 @@ const axios = {
             const res = await axios2.post(...args)
             return res
         } catch(e) {
-            return e.response
+            console.log('Axios POST error:', e.message, 'Response:', e.response?.status)
+            return e.response || { status: 500, data: { message: 'Network error' } }
         }
     },
     get: async (...args) => {
@@ -17,7 +18,8 @@ const axios = {
             const res = await axios2.get(...args)
             return res
         } catch(e) {
-            return e.response
+            console.log('Axios GET error:', e.message, 'Response:', e.response?.status)
+            return e.response || { status: 500, data: { message: 'Network error' } }
         }
     },
     put: async (...args) => {
@@ -25,7 +27,8 @@ const axios = {
             const res = await axios2.put(...args)
             return res
         } catch(e) {
-            return e.response
+            console.log('Axios PUT error:', e.message, 'Response:', e.response?.status)
+            return e.response || { status: 500, data: { message: 'Network error' } }
         }
     },
     delete: async (...args) => {
@@ -33,7 +36,8 @@ const axios = {
             const res = await axios2.delete(...args)
             return res
         } catch(e) {
-            return e.response
+            console.log('Axios DELETE error:', e.message, 'Response:', e.response?.status)
+            return e.response || { status: 500, data: { message: 'Network error' } }
         }
     },
 }
