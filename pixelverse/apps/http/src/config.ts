@@ -1,0 +1,1 @@
+export const JWT_PASSWORD = process.env.JWT_PASSWORD || "default_jwt_secret_change_in_production";
